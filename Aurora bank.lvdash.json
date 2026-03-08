@@ -1,0 +1,203 @@
+{
+  "datasets": [
+    {
+      "name": "dataset1",
+      "displayName": "genz_spending_trends",
+      "queryLines": [
+        "SELECT * FROM workspace.auroradb.customer_risk_analysis"
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "name": "page1",
+      "displayName": "New Page",
+      "layout": [
+        {
+          "widget": {
+            "name": "bar_chart1",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "dataset1",
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {}
+            }
+          },
+          "position": {
+            "x": 6,
+            "y": 0,
+            "width": 6,
+            "height": 4
+          }
+        },
+        {
+          "widget": {
+            "name": "text_box1",
+            "multilineTextboxSpec": {
+              "lines": [
+                "# genz\\_spending\\_trends table\n",
+                "\n",
+                "<p>&nbsp;</p>\n"
+              ]
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 6,
+            "width": 12,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "table1",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "dataset1",
+                  "fields": [
+                    {
+                      "name": "user_id",
+                      "expression": "`user_id`"
+                    },
+                    {
+                      "name": "num_credit_cards",
+                      "expression": "`num_credit_cards`"
+                    },
+                    {
+                      "name": "monthly_income",
+                      "expression": "`monthly_income`"
+                    },
+                    {
+                      "name": "per_capita_income",
+                      "expression": "`per_capita_income`"
+                    },
+                    {
+                      "name": "risk_segment",
+                      "expression": "`risk_segment`"
+                    },
+                    {
+                      "name": "total_debt",
+                      "expression": "`total_debt`"
+                    },
+                    {
+                      "name": "retirement_age",
+                      "expression": "`retirement_age`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "rowsPerPage": 25,
+              "displayRowNumbers": false,
+              "widgetType": "table",
+              "encodings": {
+                "columns": [
+                  {
+                    "fieldName": "user_id"
+                  },
+                  {
+                    "fieldName": "num_credit_cards"
+                  },
+                  {
+                    "fieldName": "monthly_income"
+                  },
+                  {
+                    "fieldName": "per_capita_income"
+                  },
+                  {
+                    "fieldName": "risk_segment"
+                  },
+                  {
+                    "fieldName": "total_debt"
+                  },
+                  {
+                    "fieldName": "retirement_age"
+                  }
+                ]
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 7,
+            "width": 12,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "a11716b1",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "dataset1",
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {}
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 6,
+            "height": 6
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS",
+      "layoutVersion": "GRID_V1"
+    },
+    {
+      "name": "64cb8d47",
+      "displayName": "Global Filters",
+      "layout": [
+        {
+          "widget": {
+            "name": "76def969",
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-single-select",
+              "encodings": {},
+              "frame": {
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 2
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_GLOBAL_FILTERS",
+      "layoutVersion": "GRID_V1"
+    }
+  ],
+  "uiSettings": {
+    "theme": {
+      "widgetHeaderAlignment": "ALIGNMENT_UNSPECIFIED"
+    },
+    "applyModeEnabled": false
+  }
+}
